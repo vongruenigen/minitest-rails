@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MiniTest Rails Extension</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="author" content="Mike Moore">
+  <link rel="stylesheet" href="/stylesheets/blowmage.css" media="screen" title="default" charset="utf-8">
+  <link rel="stylesheet" href="/stylesheets/solarized.css" charset="utf-8">
+</head>
+
+<body>
+
+<article>
+  <h1>MiniTest Rails Extension</h1>
+  <p>
+  MiniTest integration for Rails 3.1.
+  </p>
+  <h2>Install</h2>
+  <pre>
+      gem install minitest-rails
+  </pre>
+  <p>
+  This installs the following gems:
+  </p>
+  <pre>
+      minitest
+  </pre>
+  <h2>Configure</h2>
+  <p>
+  Create a new rails app without Test::Unit:
+  </p>
+  <pre>
+      rails new MyApp --skip-test-unit
+  </pre>
+  <p>
+  Add <tt>minitest-rails</tt> to the <tt>:test</tt> and <tt>:development</tt>
+  groups in Isolate:
+  </p>
+  <pre>
+      env :development, :test do
+        gem 'minitest-rails'
+      end
+  </pre>
+  <p>
+  Or, for the unenlightened, add <tt>minitest-rails</tt> to the
+  <tt>:test</tt> and <tt>:development</tt> groups in Gemfile:
+  </p>
+  <pre>
+      group :test, :development do
+        gem 'minitest-rails'
+      end
+  </pre>
+  <p>
+  Next run the installation generator with the following:
+  </p>
+  <pre>
+      rails generate minitest:install
+  </pre>
+  <p>
+  This will add the <tt>minitest_helper.rb</tt> file to the <tt>test</tt>
+  directory.
+  </p>
+  <h2>Usage</h2>
+  <p>
+  We aim to expose MiniTest with minimal changes for testing within Rails.
+  You can either create test classes that inherit from
+  MiniTest::Unit::TestCase or you can use the MiniTest::Spec DSL. You can
+  generate tests when you use the standard model, controller, scaffold, and
+  other generators:
+  </p>
+  <pre>
+      rails generate model User
+  </pre>
+  <p>
+  Or, you can use the MiniTest generators directly:
+  </p>
+  <pre>
+      rails generate minitest::model User
+  </pre>
+  <p>
+  And you can specify generating the tests using the MiniTest::Spec DSL on
+  any of the generators by providing the <tt>—spec</tt> option:
+  </p>
+  <pre>
+      rails generate model User --spec
+  </pre>
+</article>
+
+<script src="http://www.google-analytics.com/urchin.js"></script>
+<script>_uacct = "UA-73219-1"; urchinTracker();</script>
+
+</body>
+
+</htmL>
