@@ -12,7 +12,7 @@
 <body>
 
 <article>
-  <h1>MiniTest Rails Extension</h1>
+  <h1>minitest-rails</h1>
   <p>
   MiniTest integration for Rails 3.1.
   </p>
@@ -35,16 +35,7 @@
   </pre>
   <p>
   Add <tt>minitest-rails</tt> to the <tt>:test</tt> and <tt>:development</tt>
-  groups in Isolate:
-  </p>
-  <pre>
-      env :development, :test do
-        gem 'minitest-rails'
-      end
-  </pre>
-  <p>
-  Or, for the unenlightened, add <tt>minitest-rails</tt> to the
-  <tt>:test</tt> and <tt>:development</tt> groups in Gemfile:
+  groups in Gemfile:
   </p>
   <pre>
       group :test, :development do
@@ -52,10 +43,19 @@
       end
   </pre>
   <p>
+  Or, for the truly enlightened, add <tt>minitest-rails</tt> to the
+  <tt>:test</tt> and <tt>:development</tt> groups in Isolate:
+  </p>
+  <pre>
+      env :development, :test do
+        gem 'minitest-rails'
+      end
+  </pre>
+  <p>
   Next run the installation generator with the following:
   </p>
   <pre>
-      rails generate minitest:install
+      rails generate mini_test:install
   </pre>
   <p>
   This will add the <tt>minitest_helper.rb</tt> file to the <tt>test</tt>
@@ -73,17 +73,27 @@
       rails generate model User
   </pre>
   <p>
-  Or, you can use the MiniTest generators directly:
-  </p>
-  <pre>
-      rails generate minitest::model User
-  </pre>
-  <p>
   And you can specify generating the tests using the MiniTest::Spec DSL on
   any of the generators by providing the <tt>—spec</tt> option:
   </p>
   <pre>
       rails generate model User --spec
+  </pre>
+  <p>
+  And you can specify generating the fixture for a model by providing the
+  <tt>—fixture</tt> option:
+  </p>
+  <pre>
+      rails generate model User --fixture
+  </pre>
+  <p>
+  You can also set these as defaults by adding the following to the
+  <tt>config/application.rb</tt> file:
+  </p>
+  <pre>
+      config.generators do |g|
+        g.test_framework :mini_test, :spec =&gt; true, :fixture =&gt; true
+      end
   </pre>
 </article>
 
