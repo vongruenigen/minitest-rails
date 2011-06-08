@@ -1,0 +1,27 @@
+Wed, 08 Jun 2011 12:54:34 -0600
+lib/generators/mini_test/controller/controller_generator.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/generators/mini_test/controller/templates/controller_spec.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/generators/mini_test/controller/templates/controller_test.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/generators/mini_test/helper/helper_generator.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/generators/mini_test/helper/templates/helper_spec.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/generators/mini_test/helper/templates/helper_test.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/generators/mini_test/install/install_generator.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/generators/mini_test/install/templates/test/minitest_helper.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/generators/mini_test/mailer/mailer_generator.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/generators/mini_test/mailer/templates/mailer_spec.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/generators/mini_test/mailer/templates/mailer_test.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/generators/mini_test/model/model_generator.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/generators/mini_test/model/templates/model_spec.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/generators/mini_test/model/templates/model_test.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/generators/mini_test/scaffold/scaffold_generator.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/generators/mini_test/scaffold/templates/controller_spec.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/generators/mini_test/scaffold/templates/controller_test.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/generators/mini_test.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/minitest/rails/controller.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/minitest/rails/helper.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/minitest/rails/mailer.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/minitest/rails/model.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/minitest/rails/spec.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/minitest/rails.rb	Wed, 08 Jun 2011 03:04:03 -0600
+lib/minitest-rails.rb	Wed, 08 Jun 2011 10:27:06 -0600
+Manifest.txt	Wed, 08 Jun 2011 03:04:03 -0600
