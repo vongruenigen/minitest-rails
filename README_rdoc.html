@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>README - minitest-rails-0.0.7 Documentation</title>
+<title>README - minitest-rails-0.1.0.alpha Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -63,37 +63,45 @@
 
   <ul class="link-list">
   
-    <li><a href="./Minitest.html">Minitest</a>
+    <li><a href="./MiniTest.html">MiniTest</a>
   
-    <li><a href="./Minitest/Generators.html">Minitest::Generators</a>
+    <li><a href="./MiniTest/Generators.html">MiniTest::Generators</a>
   
-    <li><a href="./Minitest/Generators/ControllerGenerator.html">Minitest::Generators::ControllerGenerator</a>
+    <li><a href="./MiniTest/Generators/ControllerGenerator.html">MiniTest::Generators::ControllerGenerator</a>
   
-    <li><a href="./Minitest/Generators/HelperGenerator.html">Minitest::Generators::HelperGenerator</a>
+    <li><a href="./MiniTest/Generators/HelperGenerator.html">MiniTest::Generators::HelperGenerator</a>
   
-    <li><a href="./Minitest/Generators/InstallGenerator.html">Minitest::Generators::InstallGenerator</a>
+    <li><a href="./MiniTest/Generators/InstallGenerator.html">MiniTest::Generators::InstallGenerator</a>
   
-    <li><a href="./Minitest/Generators/MailerGenerator.html">Minitest::Generators::MailerGenerator</a>
+    <li><a href="./MiniTest/Generators/IntegrationGenerator.html">MiniTest::Generators::IntegrationGenerator</a>
   
-    <li><a href="./Minitest/Generators/ModelGenerator.html">Minitest::Generators::ModelGenerator</a>
+    <li><a href="./MiniTest/Generators/MailerGenerator.html">MiniTest::Generators::MailerGenerator</a>
   
-    <li><a href="./Minitest/Generators/ScaffoldGenerator.html">Minitest::Generators::ScaffoldGenerator</a>
+    <li><a href="./MiniTest/Generators/ModelGenerator.html">MiniTest::Generators::ModelGenerator</a>
   
-    <li><a href="./Minitest/Rails.html">Minitest::Rails</a>
+    <li><a href="./MiniTest/Generators/ScaffoldGenerator.html">MiniTest::Generators::ScaffoldGenerator</a>
   
-    <li><a href="./Minitest/Rails/Controller.html">Minitest::Rails::Controller</a>
+    <li><a href="./MiniTest/Rails.html">MiniTest::Rails</a>
   
-    <li><a href="./Minitest/Rails/Fixtures.html">Minitest::Rails::Fixtures</a>
+    <li><a href="./MiniTest/Rails/ActionController.html">MiniTest::Rails::ActionController</a>
   
-    <li><a href="./Minitest/Rails/Helper.html">Minitest::Rails::Helper</a>
+    <li><a href="./MiniTest/Rails/ActionController/TestCase.html">MiniTest::Rails::ActionController::TestCase</a>
   
-    <li><a href="./Minitest/Rails/Mailer.html">Minitest::Rails::Mailer</a>
+    <li><a href="./MiniTest/Rails/ActionDispatch.html">MiniTest::Rails::ActionDispatch</a>
   
-    <li><a href="./Minitest/Rails/Model.html">Minitest::Rails::Model</a>
+    <li><a href="./MiniTest/Rails/ActionDispatch/IntegrationTest.html">MiniTest::Rails::ActionDispatch::IntegrationTest</a>
   
-    <li><a href="./Minitest/Rails/Railtie.html">Minitest::Rails::Railtie</a>
+    <li><a href="./MiniTest/Rails/ActionMailer.html">MiniTest::Rails::ActionMailer</a>
   
-    <li><a href="./Minitest/Rails/Spec.html">Minitest::Rails::Spec</a>
+    <li><a href="./MiniTest/Rails/ActionMailer/TestCase.html">MiniTest::Rails::ActionMailer::TestCase</a>
+  
+    <li><a href="./MiniTest/Rails/ActiveSupport.html">MiniTest::Rails::ActiveSupport</a>
+  
+    <li><a href="./MiniTest/Rails/ActiveSupport/TestCase.html">MiniTest::Rails::ActiveSupport::TestCase</a>
+  
+    <li><a href="./MiniTest/Rails/Railtie.html">MiniTest::Rails::Railtie</a>
+  
+    <li><a href="./Object.html">Object</a>
   
   </ul>
 </nav>
@@ -105,7 +113,7 @@
   
 <h1 id="label-minitest-rails">minitest-rails</h1>
 
-<p><a href="Minitest.html">Minitest</a> integration for Rails 3.1.</p>
+<p><a href="MiniTest.html">MiniTest</a> integration for Rails 3.1.</p>
 
 <h2 id="label-Install">Install</h2>
 
@@ -137,23 +145,22 @@ end</pre>
 
 <p>Next run the installation generator with the following:</p>
 
-<pre>rails generate minitest:install</pre>
+<pre>rails generate mini_test:install</pre>
 
 <p>This will add the <code>minitest_helper.rb</code> file to the
 <code>test</code> directory.</p>
 
 <h2 id="label-Usage">Usage</h2>
 
-<p>We aim to expose <a href="Minitest.html">Minitest</a> with minimal changes
-for testing within Rails. Your test classes will inherit from <a
-href="Minitest/Rails/Spec.html">Minitest::Rails::Spec</a> (or Model, or
-Controller, etc) and you can use the Minitest::Spec DSL. You can generate
-test files with the standard model, controller, scaffold, and other
-generators:</p>
+<p>We aim to expose <a href="MiniTest.html">MiniTest</a> with minimal changes
+for testing within Rails. Your test classes will inherit from
+MiniTest::Rails::Spec (or Model, or Controller, etc) and you can use the
+MiniTest::Spec DSL. You can generate test files with the standard model,
+controller, scaffold, and other generators:</p>
 
 <pre>rails generate model User</pre>
 
-<p>And you can specify generating the tests using the Minitest::Spec DSL on
+<p>And you can specify generating the tests using the MiniTest::Spec DSL on
 any of the generators by providing the <code>--spec</code> option:</p>
 
 <pre>rails generate model User --spec</pre>
@@ -167,7 +174,7 @@ any of the generators by providing the <code>--spec</code> option:</p>
 <code>config/application.rb</code> file:</p>
 
 <pre class="ruby"><span class="ruby-identifier">config</span>.<span class="ruby-identifier">generators</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">g</span><span class="ruby-operator">|</span>
-  <span class="ruby-identifier">g</span>.<span class="ruby-identifier">test_framework</span> :<span class="ruby-identifier">minitest</span>, :<span class="ruby-identifier">spec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>, :<span class="ruby-identifier">fixture</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">g</span>.<span class="ruby-identifier">test_framework</span> :<span class="ruby-identifier">mini_test</span>, :<span class="ruby-identifier">spec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>, :<span class="ruby-identifier">fixture</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
 <span class="ruby-keyword">end</span>
 </pre>
 

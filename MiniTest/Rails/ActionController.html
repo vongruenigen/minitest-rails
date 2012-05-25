@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>class MiniTest::Generators::InstallGenerator - minitest-rails-0.1.0.alpha Documentation</title>
+<title>module MiniTest::Rails::ActionController - minitest-rails-0.1.0.alpha Documentation</title>
 
 <link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
 
@@ -20,7 +20,7 @@
 <script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
 
 
-<body id="top" class="class">
+<body id="top" class="module">
 <nav id="metadata">
   <nav id="home-section" class="section">
   <h3 class="section-header">
@@ -47,7 +47,7 @@
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
   <ul>
-    <li>lib/generators/mini_test/install/install_generator.rb
+    <li>lib/minitest/rails/action_controller.rb
   </ul>
 </nav>
 
@@ -56,27 +56,9 @@
 
   <div id="class-metadata">
     
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
-  
-  <p class="link">Rails::Generators::Base
-  
-</nav>
-
     
-    <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
-
-  <ul class="link-list">
     
-    <li><a href="#method-c-source_root">::source_root</a>
     
-    <li><a href="#method-i-copy_minitest_files">#copy_minitest_files</a>
-    
-  </ul>
-</nav>
-
   </div>
 
   <div id="project-metadata">
@@ -146,7 +128,7 @@
 </nav>
 
 <div id="documentation">
-  <h1 class="class">class MiniTest::Generators::InstallGenerator</h1>
+  <h1 class="module">module MiniTest::Rails::ActionController</h1>
 
   <div id="description" class="description">
     
@@ -166,78 +148,6 @@
 
     <!-- Methods -->
     
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Class Methods</h3>
-
-    
-      <div id="method-c-source_root" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">source_root</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="source_root-source">
-            <pre><span class="ruby-comment"># File lib/generators/mini_test/install/install_generator.rb, line 12</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">source_root</span>
-  <span class="ruby-ivar">@source_root</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>), <span class="ruby-string">'templates'</span>))
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- source_root-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- source_root-method -->
-
-    
-    </section><!-- public-class-method-details -->
-  
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
-
-    
-      <div id="method-i-copy_minitest_files" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">copy_minitest_files</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="copy_minitest_files-source">
-            <pre><span class="ruby-comment"># File lib/generators/mini_test/install/install_generator.rb, line 16</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">copy_minitest_files</span>
-  <span class="ruby-identifier">directory</span> <span class="ruby-string">'test'</span>
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- copy_minitest_files-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- copy_minitest_files-method -->
-
-    
-    </section><!-- public-instance-method-details -->
-  
   </section><!-- 5Buntitled-5D -->
 
 </div><!-- documentation -->
