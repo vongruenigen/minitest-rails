@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>class Minitest::Rails::Mailer - minitest-rails-0.0.7 Documentation</title>
+<title>module Minitest::Rails::Fixtures - minitest-rails-0.0.7 Documentation</title>
 
 <link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
 
@@ -20,7 +20,7 @@
 <script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
 
 
-<body id="top" class="class">
+<body id="top" class="module">
 <nav id="metadata">
   <nav id="home-section" class="section">
   <h3 class="section-header">
@@ -47,8 +47,7 @@
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
   <ul>
-    <li>lib/generators/minitest/install/templates/test/minitest_helper.rb
-    <li>lib/minitest/rails/mailer.rb
+    <li>lib/minitest/rails/fixtures.rb
   </ul>
 </nav>
 
@@ -57,15 +56,35 @@
 
   <div id="class-metadata">
     
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
+    
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
   
-  <p class="link"><a href="Spec.html">Minitest::Rails::Spec</a>
   
+    <li><span class="include">ActiveSupport::Testing::SetupAndTeardown</span>
+  
+  
+  
+    <li><span class="include">ActiveRecord::TestFixtures</span>
+  
+  
+  </ul>
 </nav>
 
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
     
+    <li><a href="#method-c-included">::included</a>
     
+  </ul>
+</nav>
+
   </div>
 
   <div id="project-metadata">
@@ -127,7 +146,7 @@
 </nav>
 
 <div id="documentation">
-  <h1 class="class">class Minitest::Rails::Mailer</h1>
+  <h1 class="module">module Minitest::Rails::Fixtures</h1>
 
   <div id="description" class="description">
     
@@ -147,6 +166,46 @@
 
     <!-- Methods -->
     
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-included" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">included</span><span
+            class="method-args">(klass)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="included-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/fixtures.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">klass</span>)
+  <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">include</span> <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Testing</span><span class="ruby-operator">::</span><span class="ruby-constant">SetupAndTeardown</span>
+    <span class="ruby-identifier">include</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">TestFixtures</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">fixture_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Rails</span>.<span class="ruby-identifier">root</span>, <span class="ruby-string">&quot;test&quot;</span>, <span class="ruby-string">&quot;fixtures&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- included-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- included-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
   </section><!-- 5Buntitled-5D -->
 
 </div><!-- documentation -->

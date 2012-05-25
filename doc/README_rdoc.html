@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>Manifest - minitest-rails-0.0.7 Documentation</title>
+<title>README - minitest-rails-0.0.7 Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -103,35 +103,73 @@
 
 <div id="documentation" class="description">
   
-<p>.autotest <a href="CHANGELOG_rdoc.html">CHANGELOG.rdoc</a> <a
-href="Manifest_txt.html">Manifest.txt</a> <a
-href="README_rdoc.html">README.rdoc</a> Rakefile lib/generators/minitest.rb
-lib/generators/minitest/controller/controller_generator.rb
-lib/generators/minitest/controller/templates/controller_spec.rb
-lib/generators/minitest/controller/templates/controller_test.rb
-lib/generators/minitest/helper/helper_generator.rb
-lib/generators/minitest/helper/templates/helper_spec.rb
-lib/generators/minitest/helper/templates/helper_test.rb
-lib/generators/minitest/install/install_generator.rb
-lib/generators/minitest/install/templates/test/minitest_helper.rb
-lib/generators/minitest/mailer/mailer_generator.rb
-lib/generators/minitest/mailer/templates/mailer_spec.rb
-lib/generators/minitest/mailer/templates/mailer_test.rb
-lib/generators/minitest/model/model_generator.rb
-lib/generators/minitest/model/templates/fixtures.yml
-lib/generators/minitest/model/templates/model_spec.rb
-lib/generators/minitest/model/templates/model_test.rb
-lib/generators/minitest/scaffold/scaffold_generator.rb
-lib/generators/minitest/scaffold/templates/controller_spec.rb
-lib/generators/minitest/scaffold/templates/controller_test.rb
-lib/minitest-rails.rb lib/minitest/rails.rb
-lib/minitest/rails/controller.rb lib/minitest/rails/fixtures.rb
-lib/minitest/rails/helper.rb lib/minitest/rails/mailer.rb
-lib/minitest/rails/model.rb lib/minitest/rails/spec.rb
-lib/minitest/rails/tasks/minitest.rake test/test_controller_generator.rb
-test/test_helper_generator.rb test/test_install_generator.rb
-test/test_mailer_generator.rb test/test_minitest.rb
-test/test_model_generator.rb test/test_scaffold_generator.rb</p>
+<h1 id="label-minitest-rails">minitest-rails</h1>
+
+<p><a href="Minitest.html">Minitest</a> integration for Rails 3.1.</p>
+
+<h2 id="label-Install">Install</h2>
+
+<pre>gem install minitest-rails</pre>
+
+<p>This installs the following gems:</p>
+
+<pre>minitest</pre>
+
+<h2 id="label-Configure">Configure</h2>
+
+<p>Create a new rails app without Test::Unit:</p>
+
+<pre>rails new MyApp --skip-test-unit</pre>
+
+<p>Add <code>minitest-rails</code> to the <code>:test</code> and
+<code>:development</code> groups in Gemfile:</p>
+
+<pre>group :test, :development do
+  gem 'minitest-rails'
+end</pre>
+
+<p>Or, for the truly enlightened, add <code>minitest-rails</code> to the
+<code>:test</code> and <code>:development</code> groups in Isolate:</p>
+
+<pre>env :development, :test do
+  gem 'minitest-rails'
+end</pre>
+
+<p>Next run the installation generator with the following:</p>
+
+<pre>rails generate minitest:install</pre>
+
+<p>This will add the <code>minitest_helper.rb</code> file to the
+<code>test</code> directory.</p>
+
+<h2 id="label-Usage">Usage</h2>
+
+<p>We aim to expose <a href="Minitest.html">Minitest</a> with minimal changes
+for testing within Rails. Your test classes will inherit from <a
+href="Minitest/Rails/Spec.html">Minitest::Rails::Spec</a> (or Model, or
+Controller, etc) and you can use the Minitest::Spec DSL. You can generate
+test files with the standard model, controller, scaffold, and other
+generators:</p>
+
+<pre>rails generate model User</pre>
+
+<p>And you can specify generating the tests using the Minitest::Spec DSL on
+any of the generators by providing the <code>--spec</code> option:</p>
+
+<pre>rails generate model User --spec</pre>
+
+<p>And you can specify generating the fixture for a model by providing the
+<code>--fixture</code> option:</p>
+
+<pre>rails generate model User --fixture</pre>
+
+<p>You can also set these as defaults by adding the following to the
+<code>config/application.rb</code> file:</p>
+
+<pre class="ruby"><span class="ruby-identifier">config</span>.<span class="ruby-identifier">generators</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">g</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">g</span>.<span class="ruby-identifier">test_framework</span> :<span class="ruby-identifier">minitest</span>, :<span class="ruby-identifier">spec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>, :<span class="ruby-identifier">fixture</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span>
+</pre>
 
 </div>
 
