@@ -153,10 +153,11 @@ end</pre>
 <h2 id="label-Usage">Usage</h2>
 
 <p>We aim to expose <a href="MiniTest.html">MiniTest</a> with minimal changes
-for testing within Rails. Your test classes will inherit from
-MiniTest::Rails::Spec (or Model, or Controller, etc) and you can use the
-MiniTest::Spec DSL. You can generate test files with the standard model,
-controller, scaffold, and other generators:</p>
+for testing within Rails. Your test classes will inherit from <a
+href="MiniTest/Rails/ActiveSupport/TestCase.html">MiniTest::Rails::ActiveSupport::TestCase</a>
+a opposed to ActiveSupport::TestCase. You can use the MiniTest::Spec DSL.
+You can generate test files with the standard model, controller, resource,
+and other generators:</p>
 
 <pre>rails generate model User</pre>
 
@@ -177,6 +178,13 @@ any of the generators by providing the <code>--spec</code> option:</p>
   <span class="ruby-identifier">g</span>.<span class="ruby-identifier">test_framework</span> :<span class="ruby-identifier">mini_test</span>, :<span class="ruby-identifier">spec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>, :<span class="ruby-identifier">fixture</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
 <span class="ruby-keyword">end</span>
 </pre>
+
+<h2 id="label-Get+Involved">Get Involved</h2>
+
+<p>Join the mailing list to get help or offer suggestions.</p>
+
+<p><a
+href="https://groups.google.com/forum/#!forum/minitest-rails">groups.google.com/forum/#!forum/minitest-rails</a></p>
 
 </div>
 
