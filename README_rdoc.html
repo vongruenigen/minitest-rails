@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>README - minitest-rails-0.1.0.alpha Documentation</title>
+<title>README - minitest-rails-0.1 Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -95,6 +95,10 @@
   
     <li><a href="./MiniTest/Rails/ActionMailer/TestCase.html">MiniTest::Rails::ActionMailer::TestCase</a>
   
+    <li><a href="./MiniTest/Rails/ActionView.html">MiniTest::Rails::ActionView</a>
+  
+    <li><a href="./MiniTest/Rails/ActionView/TestCase.html">MiniTest::Rails::ActionView::TestCase</a>
+  
     <li><a href="./MiniTest/Rails/ActiveSupport.html">MiniTest::Rails::ActiveSupport</a>
   
     <li><a href="./MiniTest/Rails/ActiveSupport/TestCase.html">MiniTest::Rails::ActiveSupport::TestCase</a>
@@ -113,7 +117,7 @@
   
 <h1 id="label-minitest-rails">minitest-rails</h1>
 
-<p><a href="MiniTest.html">MiniTest</a> integration for Rails 3.1.</p>
+<p><a href="MiniTest.html">MiniTest</a> integration for Rails 3.</p>
 
 <h2 id="label-Install">Install</h2>
 
@@ -136,13 +140,6 @@
   gem 'minitest-rails'
 end</pre>
 
-<p>Or, for the truly enlightened, add <code>minitest-rails</code> to the
-<code>:test</code> and <code>:development</code> groups in Isolate:</p>
-
-<pre>env :development, :test do
-  gem 'minitest-rails'
-end</pre>
-
 <p>Next run the installation generator with the following:</p>
 
 <pre>rails generate mini_test:install</pre>
@@ -153,7 +150,9 @@ end</pre>
 <h2 id="label-Usage">Usage</h2>
 
 <p>We aim to expose <a href="MiniTest.html">MiniTest</a> with minimal changes
-for testing within Rails. Your test classes will inherit from <a
+for testing within Rails. Because of this, we allow Test::Unit and <a
+href="MiniTest.html">MiniTest</a> tests to live side by side. Your test
+classes will inherit from <a
 href="MiniTest/Rails/ActiveSupport/TestCase.html">MiniTest::Rails::ActiveSupport::TestCase</a>
 a opposed to ActiveSupport::TestCase. You can use the MiniTest::Spec DSL.
 You can generate test files with the standard model, controller, resource,
@@ -166,25 +165,58 @@ any of the generators by providing the <code>--spec</code> option:</p>
 
 <pre>rails generate model User --spec</pre>
 
-<p>And you can specify generating the fixture for a model by providing the
-<code>--fixture</code> option:</p>
+<p>And you can specify not generating the fixture for a model by providing the
+<code>--skip-fixture</code> option:</p>
 
-<pre>rails generate model User --fixture</pre>
+<pre>rails generate model User --skip-fixture</pre>
 
 <p>You can also set these as defaults by adding the following to the
 <code>config/application.rb</code> file:</p>
 
 <pre class="ruby"><span class="ruby-identifier">config</span>.<span class="ruby-identifier">generators</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">g</span><span class="ruby-operator">|</span>
-  <span class="ruby-identifier">g</span>.<span class="ruby-identifier">test_framework</span> :<span class="ruby-identifier">mini_test</span>, :<span class="ruby-identifier">spec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>, :<span class="ruby-identifier">fixture</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">g</span>.<span class="ruby-identifier">test_framework</span> :<span class="ruby-identifier">mini_test</span>, :<span class="ruby-identifier">spec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>, :<span class="ruby-identifier">fixture</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>
 <span class="ruby-keyword">end</span>
 </pre>
+
+<h2 id="label-Overriding+Test%3A%3AUnit">Overriding Test::Unit</h2>
+
+<p>Of course, you may not want to maintain separate Test::Unit and <a
+href="MiniTest.html">MiniTest</a> tests. If this is the behavior you are
+wanting, simply add the following to your <code>test_helper.rb</code> file:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;minitest/rails&quot;</span>
+<span class="ruby-constant">MiniTest</span><span class="ruby-operator">::</span><span class="ruby-constant">Rails</span>.<span class="ruby-identifier">override_testunit!</span>
+</pre>
+
+<h2 id="label-Capybara">Capybara</h2>
+
+<p>You can use Capybara in your acceptance/integration tests by adding
+<code>minitest-rails-capybara</code> as a dependency.</p>
+
+<pre>group :test, :development do
+  gem 'minitest-rails'
+  gem 'minitest-rails-capybara'
+end</pre>
+
+<p>And add the following to your test helper file:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;minitest/rails/capybara&quot;</span>
+</pre>
+
+<p>See the <code>minitest-rails-capybara</code> project for more information.</p>
 
 <h2 id="label-Get+Involved">Get Involved</h2>
 
 <p>Join the mailing list to get help or offer suggestions.</p>
 
 <p><a
-href="https://groups.google.com/forum/#!forum/minitest-rails">groups.google.com/forum/#!forum/minitest-rails</a></p>
+href="https://groups.google.com/group/minitest-rails">groups.google.com/group/minitest-rails</a></p>
+
+<h2 id="label-License">License</h2>
+
+<p>Copyright © 2012 Mike Moore.</p>
+
+<p>Released under the MIT license. See `LICENSE` for details.</p>
 
 </div>
 

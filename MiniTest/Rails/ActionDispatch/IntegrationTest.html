@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>class MiniTest::Rails::ActionDispatch::IntegrationTest - minitest-rails-0.1.0.alpha Documentation</title>
+<title>class MiniTest::Rails::ActionDispatch::IntegrationTest - minitest-rails-0.1 Documentation</title>
 
 <link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
 
@@ -78,6 +78,10 @@
     <li><span class="include">::ActionController::TemplateAssertions</span>
   
   
+  
+    <li><span class="include">::ActionDispatch::Routing::UrlFor</span>
+  
+  
   </ul>
 </nav>
 
@@ -86,6 +90,10 @@
   <h3 class="section-header">Methods</h3>
 
   <ul class="link-list">
+    
+    <li><a href="#method-c-app">::app</a>
+    
+    <li><a href="#method-c-app-3D">::app=</a>
     
     <li><a href="#method-i-app">#app</a>
     
@@ -146,6 +154,10 @@
   
     <li><a href="../../../MiniTest/Rails/ActionMailer/TestCase.html">MiniTest::Rails::ActionMailer::TestCase</a>
   
+    <li><a href="../../../MiniTest/Rails/ActionView.html">MiniTest::Rails::ActionView</a>
+  
+    <li><a href="../../../MiniTest/Rails/ActionView/TestCase.html">MiniTest::Rails::ActionView::TestCase</a>
+  
     <li><a href="../../../MiniTest/Rails/ActiveSupport.html">MiniTest::Rails::ActiveSupport</a>
   
     <li><a href="../../../MiniTest/Rails/ActiveSupport/TestCase.html">MiniTest::Rails::ActiveSupport::TestCase</a>
@@ -181,6 +193,74 @@
 
     <!-- Methods -->
     
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-app" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">app</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="app-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/action_dispatch.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">app</span>
+  <span class="ruby-comment"># DEPRECATE Rails application fallback</span>
+  <span class="ruby-comment"># This should be set by the initializer</span>
+  <span class="ruby-identifier">@@app</span> <span class="ruby-operator">||</span> (<span class="ruby-keyword">defined?</span>(<span class="ruby-constant">Rails</span>.<span class="ruby-identifier">application</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Rails</span>.<span class="ruby-identifier">application</span>) <span class="ruby-operator">||</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- app-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- app-method -->
+
+    
+      <div id="method-c-app-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">app=</span><span
+            class="method-args">(app)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="app-3D-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/action_dispatch.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">app=</span>(<span class="ruby-identifier">app</span>)
+  <span class="ruby-identifier">@@app</span> = <span class="ruby-identifier">app</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- app-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- app-3D-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
      <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
       <h3 class="section-header">Public Instance Methods</h3>
 
@@ -201,7 +281,7 @@
 
           
           <div class="method-source-code" id="app-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails/action_dispatch.rb, line 11</span>
+            <pre><span class="ruby-comment"># File lib/minitest/rails/action_dispatch.rb, line 24</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">app</span>
   <span class="ruby-keyword">super</span> <span class="ruby-operator">||</span> <span class="ruby-operator">::</span><span class="ruby-constant">ActionDispatch</span><span class="ruby-operator">::</span><span class="ruby-constant">IntegrationTest</span>.<span class="ruby-identifier">app</span>
 <span class="ruby-keyword">end</span></pre>

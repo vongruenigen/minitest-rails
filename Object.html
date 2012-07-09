@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>class Object - minitest-rails-0.1.0.alpha Documentation</title>
+<title>class Object - minitest-rails-0.1 Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -129,6 +129,10 @@
   
     <li><a href="./MiniTest/Rails/ActionMailer/TestCase.html">MiniTest::Rails::ActionMailer::TestCase</a>
   
+    <li><a href="./MiniTest/Rails/ActionView.html">MiniTest::Rails::ActionView</a>
+  
+    <li><a href="./MiniTest/Rails/ActionView/TestCase.html">MiniTest::Rails::ActionView::TestCase</a>
+  
     <li><a href="./MiniTest/Rails/ActiveSupport.html">MiniTest::Rails::ActiveSupport</a>
   
     <li><a href="./MiniTest/Rails/ActiveSupport/TestCase.html">MiniTest::Rails::ActiveSupport::TestCase</a>
@@ -184,9 +188,9 @@
 
           
           <div class="method-source-code" id="create_fixtures-source">
-            <pre><span class="ruby-comment"># File lib/minitest/rails.rb, line 25</span>
+            <pre><span class="ruby-comment"># File lib/minitest/rails.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create_fixtures</span>(*<span class="ruby-identifier">table_names</span>, &amp;<span class="ruby-identifier">block</span>)
-  <span class="ruby-constant">Fixtures</span>.<span class="ruby-identifier">create_fixtures</span>(<span class="ruby-constant">MiniTest</span><span class="ruby-operator">::</span><span class="ruby-constant">Rails</span><span class="ruby-operator">::</span><span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">TestCase</span>.<span class="ruby-identifier">fixture_path</span>, <span class="ruby-identifier">table_names</span>, {}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Fixtures</span>.<span class="ruby-identifier">create_fixtures</span>(<span class="ruby-constant">MiniTest</span><span class="ruby-operator">::</span><span class="ruby-constant">Rails</span><span class="ruby-operator">::</span><span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">TestCase</span>.<span class="ruby-identifier">fixture_path</span>, <span class="ruby-identifier">table_names</span>, {}, &amp;<span class="ruby-identifier">block</span>)
 <span class="ruby-keyword">end</span></pre>
           </div><!-- create_fixtures-source -->
           
