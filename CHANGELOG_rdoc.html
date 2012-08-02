@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>CHANGELOG - minitest-rails-0.1 Documentation</title>
+<title>CHANGELOG - minitest-rails-0.1.3 Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -85,6 +85,8 @@
   
     <li><a href="./MiniTest/Rails/ActionController.html">MiniTest::Rails::ActionController</a>
   
+    <li><a href="./MiniTest/Rails/ActionController/ControllerLookup.html">MiniTest::Rails::ActionController::ControllerLookup</a>
+  
     <li><a href="./MiniTest/Rails/ActionController/TestCase.html">MiniTest::Rails::ActionController::TestCase</a>
   
     <li><a href="./MiniTest/Rails/ActionDispatch.html">MiniTest::Rails::ActionDispatch</a>
@@ -103,7 +105,15 @@
   
     <li><a href="./MiniTest/Rails/ActiveSupport/TestCase.html">MiniTest::Rails::ActiveSupport::TestCase</a>
   
+    <li><a href="./MiniTest/Rails/ActiveSupport/Testing.html">MiniTest::Rails::ActiveSupport::Testing</a>
+  
+    <li><a href="./MiniTest/Rails/ActiveSupport/Testing/Declarative.html">MiniTest::Rails::ActiveSupport::Testing::Declarative</a>
+  
     <li><a href="./MiniTest/Rails/Railtie.html">MiniTest::Rails::Railtie</a>
+  
+    <li><a href="./MiniTest/Rails/Tasks.html">MiniTest::Rails::Tasks</a>
+  
+    <li><a href="./MiniTest/Rails/Tasks/SubTestTask.html">MiniTest::Rails::Tasks::SubTestTask</a>
   
     <li><a href="./Object.html">Object</a>
   
@@ -115,7 +125,39 @@
 
 <div id="documentation" class="description">
   
-<h3 id="label-0.1.0+%2F+2012-07-09">0.1.0 / 2012-07-09</h3>
+<h3 id="label-0.1.3+%2F+2012-08-02">0.1.3 / 2012-08-02</h3>
+<ul><li>
+<p>Significant improvements to nested describe blocks (closes #58)</p>
+</li><li>
+<p>Tests no longer need write permission to the filesytem</p>
+</li></ul>
+
+<p><a
+href="https://github.com/blowmage/minitest-rails/compare/v0.1.2...v0.1.3">github.com/blowmage/minitest-rails/compare/v0.1.2...v0.1.3</a></p>
+
+<h3 id="label-0.1.2+%2F+2012-07-26">0.1.2 / 2012-07-26</h3>
+<ul><li>
+<p>Fix bug when ActionMailer isn’t loaded (closes #66)</p>
+</li><li>
+<p>Allow specs to use strings in `describe` blocks</p>
+</li></ul>
+
+<p><a
+href="https://github.com/blowmage/minitest-rails/compare/v0.1.1...v0.1.2">github.com/blowmage/minitest-rails/compare/v0.1.1...v0.1.2</a></p>
+
+<h3 id="label-0.1.1+%2F+2012-07-17">0.1.1 / 2012-07-17</h3>
+<ul><li>
+<p>Improved rake tasks</p>
+</li><li>
+<p>Improved Rails 3.0 support</p>
+</li><li>
+<p>Fixed bug with nested describes</p>
+</li></ul>
+
+<p><a
+href="https://github.com/blowmage/minitest-rails/compare/v0.1...v0.1.1">github.com/blowmage/minitest-rails/compare/v0.1...v0.1.1</a></p>
+
+<h3 id="label-0.1+%2F+2012-07-09">0.1 / 2012-07-09</h3>
 
 <p>This is a major change. The approach used is the same approach used in
 Rails 4. This version is very different than the 0.0.x versions.</p>

@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>Manifest - minitest-rails-0.1 Documentation</title>
+<title>Manifest - minitest-rails-0.1.3 Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -85,6 +85,8 @@
   
     <li><a href="./MiniTest/Rails/ActionController.html">MiniTest::Rails::ActionController</a>
   
+    <li><a href="./MiniTest/Rails/ActionController/ControllerLookup.html">MiniTest::Rails::ActionController::ControllerLookup</a>
+  
     <li><a href="./MiniTest/Rails/ActionController/TestCase.html">MiniTest::Rails::ActionController::TestCase</a>
   
     <li><a href="./MiniTest/Rails/ActionDispatch.html">MiniTest::Rails::ActionDispatch</a>
@@ -103,7 +105,15 @@
   
     <li><a href="./MiniTest/Rails/ActiveSupport/TestCase.html">MiniTest::Rails::ActiveSupport::TestCase</a>
   
+    <li><a href="./MiniTest/Rails/ActiveSupport/Testing.html">MiniTest::Rails::ActiveSupport::Testing</a>
+  
+    <li><a href="./MiniTest/Rails/ActiveSupport/Testing/Declarative.html">MiniTest::Rails::ActiveSupport::Testing::Declarative</a>
+  
     <li><a href="./MiniTest/Rails/Railtie.html">MiniTest::Rails::Railtie</a>
+  
+    <li><a href="./MiniTest/Rails/Tasks.html">MiniTest::Rails::Tasks</a>
+  
+    <li><a href="./MiniTest/Rails/Tasks/SubTestTask.html">MiniTest::Rails::Tasks::SubTestTask</a>
   
     <li><a href="./Object.html">Object</a>
   
@@ -115,9 +125,12 @@
 
 <div id="documentation" class="description">
   
-<p>.autotest .gemtest <a href="CHANGELOG_rdoc.html">CHANGELOG.rdoc</a> LICENSE
-<a href="Manifest_txt.html">Manifest.txt</a> <a
-href="README_rdoc.html">README.rdoc</a> Rakefile
+<p>.autotest .gemtest .travis.yml <a
+href="CHANGELOG_rdoc.html">CHANGELOG.rdoc</a> LICENSE <a
+href="Manifest_txt.html">Manifest.txt</a> <a
+href="README_rdoc.html">README.rdoc</a> Rakefile gemfiles/3.0.gemfile
+gemfiles/3.0.gemfile.lock gemfiles/3.1.gemfile gemfiles/3.1.gemfile.lock
+gemfiles/3.2.gemfile gemfiles/3.2.gemfile.lock gemfiles/minitest_tu_shim.rb
 lib/generators/mini_test.rb
 lib/generators/mini_test/controller/controller_generator.rb
 lib/generators/mini_test/controller/templates/controller_spec.rb
@@ -144,11 +157,21 @@ lib/minitest-rails.rb lib/minitest/rails.rb
 lib/minitest/rails/action_controller.rb
 lib/minitest/rails/action_dispatch.rb lib/minitest/rails/action_mailer.rb
 lib/minitest/rails/action_view.rb lib/minitest/rails/active_support.rb
-lib/minitest/rails/tasks/minitest.rake minitest-rails.gemspec
-test/test_controller_generator.rb test/test_helper_generator.rb
-test/test_install_generator.rb test/test_mailer_generator.rb
-test/test_minitest.rb test/test_model_generator.rb
-test/test_scaffold_generator.rb</p>
+lib/minitest/rails/declarative.rb lib/minitest/rails/mochaing.rb
+lib/minitest/rails/tasks/minitest.rake
+lib/minitest/rails/tasks/sub_test_task.rb minitest-rails.gemspec
+test/generators/test_controller_generator.rb
+test/generators/test_helper_generator.rb
+test/generators/test_install_generator.rb
+test/generators/test_mailer_generator.rb
+test/generators/test_model_generator.rb
+test/generators/test_scaffold_generator.rb
+test/rails/action_controller/test_controller_lookup.rb
+test/rails/action_controller/test_controllers.rb
+test/rails/action_controller/test_spec_type.rb
+test/rails/test_action_dispatch_spec_type.rb
+test/rails/test_action_mailer_spec_type.rb
+test/rails/test_action_view_spec_type.rb test/test_minitest.rb</p>
 
 </div>
 

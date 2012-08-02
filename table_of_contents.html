@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>Table of Contents - minitest-rails-0.1 Documentation</title>
+<title>Table of Contents - minitest-rails-0.1.3 Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -21,7 +21,7 @@
 
 
 <body class="indexpage">
-<h1>Table of Contents - minitest-rails-0.1 Documentation</h1>
+<h1>Table of Contents - minitest-rails-0.1.3 Documentation</h1>
 
 <h2>Pages</h2>
 <ul>
@@ -30,7 +30,10 @@
 
     <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
     <ul class="initially-hidden">
-      <li><a href="CHANGELOG_rdoc.html#label-0.1.0+%2F+2012-07-09">0.1.0 / 2012-07-09</a>
+      <li><a href="CHANGELOG_rdoc.html#label-0.1.3+%2F+2012-08-02">0.1.3 / 2012-08-02</a>
+      <li><a href="CHANGELOG_rdoc.html#label-0.1.2+%2F+2012-07-26">0.1.2 / 2012-07-26</a>
+      <li><a href="CHANGELOG_rdoc.html#label-0.1.1+%2F+2012-07-17">0.1.1 / 2012-07-17</a>
+      <li><a href="CHANGELOG_rdoc.html#label-0.1+%2F+2012-07-09">0.1 / 2012-07-09</a>
       <li><a href="CHANGELOG_rdoc.html#label-0.0.7+%2F+2012-05-19">0.0.7 / 2012-05-19</a>
       <li><a href="CHANGELOG_rdoc.html#label-0.0.6+%2F+2012-03-14">0.0.6 / 2012-03-14</a>
       <li><a href="CHANGELOG_rdoc.html#label-0.0.5+%2F+2011-06-22">0.0.5 / 2011-06-22</a>
@@ -53,6 +56,7 @@
       <li><a href="README_rdoc.html#label-Usage">Usage</a>
       <li><a href="README_rdoc.html#label-Overriding+Test%3A%3AUnit">Overriding Test::Unit</a>
       <li><a href="README_rdoc.html#label-Capybara">Capybara</a>
+      <li><a href="README_rdoc.html#label-Incompatibilities">Incompatibilities</a>
       <li><a href="README_rdoc.html#label-Get+Involved">Get Involved</a>
       <li><a href="README_rdoc.html#label-License">License</a>
     </ul>
@@ -95,6 +99,9 @@
     <li class="module">
     <a href="MiniTest/Rails/ActionController.html">MiniTest::Rails::ActionController</a>
   </li>
+    <li class="module">
+    <a href="MiniTest/Rails/ActionController/ControllerLookup.html">MiniTest::Rails::ActionController::ControllerLookup</a>
+  </li>
     <li class="class">
     <a href="MiniTest/Rails/ActionController/TestCase.html">MiniTest::Rails::ActionController::TestCase</a>
   </li>
@@ -122,8 +129,20 @@
     <li class="class">
     <a href="MiniTest/Rails/ActiveSupport/TestCase.html">MiniTest::Rails::ActiveSupport::TestCase</a>
   </li>
+    <li class="module">
+    <a href="MiniTest/Rails/ActiveSupport/Testing.html">MiniTest::Rails::ActiveSupport::Testing</a>
+  </li>
+    <li class="module">
+    <a href="MiniTest/Rails/ActiveSupport/Testing/Declarative.html">MiniTest::Rails::ActiveSupport::Testing::Declarative</a>
+  </li>
     <li class="class">
     <a href="MiniTest/Rails/Railtie.html">MiniTest::Rails::Railtie</a>
+  </li>
+    <li class="module">
+    <a href="MiniTest/Rails/Tasks.html">MiniTest::Rails::Tasks</a>
+  </li>
+    <li class="class">
+    <a href="MiniTest/Rails/Tasks/SubTestTask.html">MiniTest::Rails::Tasks::SubTestTask</a>
   </li>
     <li class="class">
     <a href="Object.html">Object</a>
@@ -137,6 +156,10 @@
     <li class="method"><a href="MiniTest/Rails/ActionDispatch/IntegrationTest.html#method-c-app">::app &mdash; MiniTest::Rails::ActionDispatch::IntegrationTest</a>
   
     <li class="method"><a href="MiniTest/Rails/ActionDispatch/IntegrationTest.html#method-c-app-3D">::app= &mdash; MiniTest::Rails::ActionDispatch::IntegrationTest</a>
+  
+    <li class="method"><a href="MiniTest/Rails/ActionController/TestCase.html#method-c-determine_default_controller_class">::determine_default_controller_class &mdash; MiniTest::Rails::ActionController::TestCase</a>
+  
+    <li class="method"><a href="MiniTest/Rails/ActionController/ControllerLookup.html#method-c-find">::find &mdash; MiniTest::Rails::ActionController::ControllerLookup</a>
   
     <li class="method"><a href="MiniTest/Rails/ActiveSupport/TestCase.html#method-c-for_tag">::for_tag &mdash; MiniTest::Rails::ActiveSupport::TestCase</a>
   
@@ -160,17 +183,19 @@
   
     <li class="method"><a href="MiniTest/Generators/ModelGenerator.html#method-i-create_test_file">#create_test_file &mdash; MiniTest::Generators::ModelGenerator</a>
   
-    <li class="method"><a href="MiniTest/Generators/IntegrationGenerator.html#method-i-create_test_files">#create_test_files &mdash; MiniTest::Generators::IntegrationGenerator</a>
-  
-    <li class="method"><a href="MiniTest/Generators/MailerGenerator.html#method-i-create_test_files">#create_test_files &mdash; MiniTest::Generators::MailerGenerator</a>
+    <li class="method"><a href="MiniTest/Generators/ControllerGenerator.html#method-i-create_test_files">#create_test_files &mdash; MiniTest::Generators::ControllerGenerator</a>
   
     <li class="method"><a href="MiniTest/Generators/ScaffoldGenerator.html#method-i-create_test_files">#create_test_files &mdash; MiniTest::Generators::ScaffoldGenerator</a>
   
     <li class="method"><a href="MiniTest/Generators/HelperGenerator.html#method-i-create_test_files">#create_test_files &mdash; MiniTest::Generators::HelperGenerator</a>
   
-    <li class="method"><a href="MiniTest/Generators/ControllerGenerator.html#method-i-create_test_files">#create_test_files &mdash; MiniTest::Generators::ControllerGenerator</a>
+    <li class="method"><a href="MiniTest/Generators/MailerGenerator.html#method-i-create_test_files">#create_test_files &mdash; MiniTest::Generators::MailerGenerator</a>
   
-    <li class="method"><a href="MiniTest/Rails/ActiveSupport/TestCase.html#method-i-describe">#describe &mdash; MiniTest::Rails::ActiveSupport::TestCase</a>
+    <li class="method"><a href="MiniTest/Generators/IntegrationGenerator.html#method-i-create_test_files">#create_test_files &mdash; MiniTest::Generators::IntegrationGenerator</a>
+  
+    <li class="method"><a href="MiniTest/Rails/Tasks/SubTestTask.html#method-i-desc">#desc &mdash; MiniTest::Rails::Tasks::SubTestTask</a>
+  
+    <li class="method"><a href="MiniTest/Rails/ActiveSupport/Testing/Declarative.html#method-i-test">#test &mdash; MiniTest::Rails::ActiveSupport::Testing::Declarative</a>
   
 </ul>
 

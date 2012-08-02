@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>class MiniTest::Rails::ActionController::TestCase - minitest-rails-0.1 Documentation</title>
+<title>class MiniTest::Rails::ActionController::TestCase - minitest-rails-0.1.3 Documentation</title>
 
 <link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
 
@@ -77,7 +77,17 @@
   </ul>
 </nav>
 
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
     
+    <li><a href="#method-c-determine_default_controller_class">::determine_default_controller_class</a>
+    
+  </ul>
+</nav>
+
   </div>
 
   <div id="project-metadata">
@@ -122,6 +132,8 @@
   
     <li><a href="../../../MiniTest/Rails/ActionController.html">MiniTest::Rails::ActionController</a>
   
+    <li><a href="../../../MiniTest/Rails/ActionController/ControllerLookup.html">MiniTest::Rails::ActionController::ControllerLookup</a>
+  
     <li><a href="../../../MiniTest/Rails/ActionController/TestCase.html">MiniTest::Rails::ActionController::TestCase</a>
   
     <li><a href="../../../MiniTest/Rails/ActionDispatch.html">MiniTest::Rails::ActionDispatch</a>
@@ -140,7 +152,15 @@
   
     <li><a href="../../../MiniTest/Rails/ActiveSupport/TestCase.html">MiniTest::Rails::ActiveSupport::TestCase</a>
   
+    <li><a href="../../../MiniTest/Rails/ActiveSupport/Testing.html">MiniTest::Rails::ActiveSupport::Testing</a>
+  
+    <li><a href="../../../MiniTest/Rails/ActiveSupport/Testing/Declarative.html">MiniTest::Rails::ActiveSupport::Testing::Declarative</a>
+  
     <li><a href="../../../MiniTest/Rails/Railtie.html">MiniTest::Rails::Railtie</a>
+  
+    <li><a href="../../../MiniTest/Rails/Tasks.html">MiniTest::Rails::Tasks</a>
+  
+    <li><a href="../../../MiniTest/Rails/Tasks/SubTestTask.html">MiniTest::Rails::Tasks::SubTestTask</a>
   
     <li><a href="../../../Object.html">Object</a>
   
@@ -184,6 +204,55 @@
 
     <!-- Methods -->
     
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-determine_default_controller_class" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">determine_default_controller_class</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="determine_default_controller_class-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/action_controller.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">determine_default_controller_class</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-comment"># Override this method to support nested describes</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># describe WidgetsController do</span>
+  <span class="ruby-comment">#   describe &quot;index&quot; do</span>
+  <span class="ruby-comment">#     it &quot;is successful&quot; do</span>
+  <span class="ruby-comment">#       assert_response :success</span>
+  <span class="ruby-comment">#     end</span>
+  <span class="ruby-comment">#   end</span>
+  <span class="ruby-comment"># end</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># Original implementation:</span>
+  <span class="ruby-comment"># name.sub(/Test$/, '').safe_constantize</span>
+  <span class="ruby-comment"># safe_constantize is not supported in Rails 3.0...</span>
+  <span class="ruby-constant">ControllerLookup</span>.<span class="ruby-identifier">find</span> <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- determine_default_controller_class-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- determine_default_controller_class-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
   </section><!-- 5Buntitled-5D -->
 
 </div><!-- documentation -->

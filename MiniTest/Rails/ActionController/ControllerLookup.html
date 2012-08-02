@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>class MiniTest::Rails::ActionView::TestCase - minitest-rails-0.1.3 Documentation</title>
+<title>module MiniTest::Rails::ActionController::ControllerLookup - minitest-rails-0.1.3 Documentation</title>
 
 <link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
 
@@ -20,7 +20,7 @@
 <script type="text/javascript" charset="utf-8" src="../../../js/darkfish.js"></script>
 
 
-<body id="top" class="class">
+<body id="top" class="module">
 <nav id="metadata">
   <nav id="home-section" class="section">
   <h3 class="section-header">
@@ -47,7 +47,7 @@
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
   <ul>
-    <li>lib/minitest/rails/action_view.rb
+    <li>lib/minitest/rails/action_controller.rb
   </ul>
 </nav>
 
@@ -56,27 +56,19 @@
 
   <div id="class-metadata">
     
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
-  
-  <p class="link"><a href="../ActiveSupport/TestCase.html">MiniTest::Rails::ActiveSupport::TestCase</a>
-  
-</nav>
-
-    <!-- Included Modules -->
-<nav id="includes-section" class="section">
-  <h3 class="section-header">Included Modules</h3>
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
 
   <ul class="link-list">
-  
-  
-    <li><span class="include">::ActionView::TestCase::Behavior</span>
-  
-  
+    
+    <li><a href="#method-c-find">::find</a>
+    
   </ul>
 </nav>
 
-    
   </div>
 
   <div id="project-metadata">
@@ -160,7 +152,7 @@
 </nav>
 
 <div id="documentation">
-  <h1 class="class">class MiniTest::Rails::ActionView::TestCase</h1>
+  <h1 class="module">module MiniTest::Rails::ActionController::ControllerLookup</h1>
 
   <div id="description" class="description">
     
@@ -175,24 +167,65 @@
     
 
     
-    <!-- Constants -->
-    <section id="constants-list" class="section">
-      <h3 class="section-header">Constants</h3>
-      <dl>
-      
-        <dt id="TestController">TestController
-        
-        <dd class="description">
-        
-      
-      </dl>
-    </section>
-    
 
     
 
     <!-- Methods -->
     
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-find" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find</span><span
+            class="method-args">(controller)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="find-source">
+            <pre><span class="ruby-comment"># File lib/minitest/rails/action_controller.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find</span> <span class="ruby-identifier">controller</span>
+  <span class="ruby-comment"># HACK: I don't love this implementation</span>
+  <span class="ruby-comment"># Please suggest a better one!</span>
+  <span class="ruby-identifier">names</span> = <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">split</span> <span class="ruby-string">&quot;::&quot;</span>
+  <span class="ruby-identifier">controller</span> = <span class="ruby-keyword">while</span> <span class="ruby-identifier">names</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-comment"># Remove &quot;Test&quot; if present</span>
+    <span class="ruby-identifier">names</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">sub!</span> <span class="ruby-regexp">%rTest$/</span>, <span class="ruby-string">''</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">constant</span> = <span class="ruby-identifier">names</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;::&quot;</span>).<span class="ruby-identifier">constantize</span>
+      <span class="ruby-keyword">break</span>(<span class="ruby-identifier">constant</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">constant</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">NameError</span>
+      <span class="ruby-comment"># do nothing</span>
+    <span class="ruby-keyword">ensure</span>
+      <span class="ruby-identifier">names</span>.<span class="ruby-identifier">pop</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-operator">::</span><span class="ruby-constant">NameError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;Unable to resolve controller for #{name}&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">controller</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
   </section><!-- 5Buntitled-5D -->
 
 </div><!-- documentation -->
