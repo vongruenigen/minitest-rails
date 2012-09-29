@@ -16,6 +16,11 @@ end
 
 module MiniTest
   module Rails
+    ##
+    # Replaces the default tests with the ones from minitest-rails.
+    # This allows you to drop the 'MiniTest::Rails::' namespace
+    # from your tests, and use minitest-rails in your existing
+    # Test::Unit tests.
     def self.override_testunit!
       Kernel.silence_warnings do
         ::ActiveSupport.const_set    :TestCase,        MiniTest::Rails::ActiveSupport::TestCase
@@ -24,6 +29,14 @@ module MiniTest
         ::ActionMailer.const_set     :TestCase,        MiniTest::Rails::ActionMailer::TestCase if defined? ActionMailer
         ::ActionDispatch.const_set   :IntegrationTest, MiniTest::Rails::ActionDispatch::IntegrationTest
       end
+    end
+    ##
+    # Force all tests using the spec DSL to use ActiveSupport::TestCase.
+    # This is useful if you are testing objects that do not inherit
+    # from the classes Rails provides (ActiveRecord, ActiveMailer, etc.)
+    # but you still want db transactions and fixtures in your tests.
+    def self.override_default_spec!
+      MiniTest::Spec::TYPES.last[1] = MiniTest::Rails::ActiveSupport::TestCase
     end
   end
 end

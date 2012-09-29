@@ -17,9 +17,7 @@ class MiniTest::Rails::ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
 end
 
-# Do you want all existing Rails tests to use MiniTest::Rails?
-# Comment out the following and either:
-# A) Change the require on the existing tests to `require "minitest_helper"`
-# B) Require this file's code in test_helper.rb
-
+# Inject MiniTest into all existing Rails test classes.
 # MiniTest::Rails.override_testunit!
+# Force all spec-style tests to use ActiveSupport::TestCase.
+# MiniTest::Rails.override_default_spec!
