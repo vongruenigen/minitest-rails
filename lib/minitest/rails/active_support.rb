@@ -53,6 +53,11 @@ module MiniTest
         include ::ActiveSupport::Testing::Pending
         extend  Testing::Declarative
         include MiniTest::Rails::ActiveSupport::Testing::ConstantLookup
+        include ActiveSupport::Testing::SetupAndTeardown
+        include ActiveRecord::TestFixtures
+
+        alias :method_name :__name__ if defined? :__name__
+        self.fixture_path = File.join(Rails.root, 'test', 'fixtures')
 
         # test/unit backwards compatibility methods
         alias :assert_raise :assert_raises
