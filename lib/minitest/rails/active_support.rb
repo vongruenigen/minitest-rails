@@ -56,7 +56,7 @@ module MiniTest
         include MiniTest::Rails::ActiveSupport::Testing::ConstantLookup
 
         alias :method_name :__name__ if defined? :__name__
-        self.fixture_path = File.join(Rails.root, 'test', 'fixtures')
+        self.fixture_path = File.join(::Rails.root, 'test', 'fixtures')
 
         # test/unit backwards compatibility methods
         alias :assert_raise :assert_raises
